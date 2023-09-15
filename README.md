@@ -1,8 +1,4 @@
-This is a quick nasty Python script to take input like
-
-    0xdeadbeefdeadbeef
-
-and spit out
+Take in binary file and output words like
 
     HOP GAG GUS IO HOP GAG GUS IO
 
@@ -14,10 +10,10 @@ or
 
 as made famous by [the PGP wordlist](https://en.wikipedia.org/wiki/PGP_word_list)
 
-The former is accomplished by
+Also go in reverse, turning a file full of words into a binary file.
 
-    python phrase_from_bytes.py 0xdeadbeefdeadbeef awful
+```
+byte-words.py -h
+```
 
-the latter by
-
-    python phrase_from_bytes.py 0xdeadbeefdeadbeef
+to see usage.
