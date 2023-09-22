@@ -949,7 +949,7 @@ def usage(program_name):
   -r  Expect <filename> to be filled with words and output binary"""
 
 
-if __name__ == "__main__":
+def main():
     # l.basicConfig(level=l.INFO)
     if len(sys.argv) < 2:
         print(usage(sys.argv[0]))
@@ -1051,3 +1051,7 @@ if __name__ == "__main__":
                 while latest != b'':
                     print(pgp_words_from_bytes(latest))
                     latest = f.read(1024)
+
+
+if __name__ == "__main__":
+    main()
