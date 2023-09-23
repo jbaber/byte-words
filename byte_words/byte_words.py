@@ -264,7 +264,7 @@ PGP_WORD_LIST = [
     ['willow', 'Wyoming'],
     ['woodlark', 'yesteryear'],
     ['Zulu', 'Yucatan'],
-  ]
+]
 
 PGP_REVERSE_WORD_LIST = {
     'AARDVARK': 0, 'ADROITNESS': 0,
@@ -798,6 +798,8 @@ def pgp_words_from_bytes(some_bytes, swap=False):
     index = (byte_num + (1 if swap else 0)) % 2
     to_return.append(PGP_WORD_LIST[byte][index])
     byte_num += 1
+    if byte_num % 5 == 0:
+        to_return.append("\n")
   return ' '.join(to_return)
 
 
@@ -1033,7 +1035,7 @@ def main():
                 while num_bytes_read < quotient * 8:
                     eight_bytes = f.read(8)
                     l.info(f"eight_bytes: {eight_bytes}")
-                    print(" ".join(six_words_from_8_bytes(int_from_8_bytes(eight_bytes))), end=" ")
+                    print(" ".join(six_words_from_8_bytes(int_from_8_bytes(eight_bytes))))
                     num_bytes_read += 8
                 if (num_padding_bytes > 0):
                     eight_bytes = f.read(8) + b'\x00' * num_padding_bytes

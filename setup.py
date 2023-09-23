@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
   name = "byte_words",
-  version = "1.0.0",
+  version = "1.1.0",
   author = "John Baber-Lucero",
   author_email = "pypi@frundle.com",
   description = ("Turn binary files into words and vice versa"),
